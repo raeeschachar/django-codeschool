@@ -8,13 +8,12 @@
         </div>
         <div class="panel-body">
             <div class="treasure-photo-detail">
-                <img src="{{ treasure.image.url }}">
+                <img src="{{ treasure.img_url }}">
             </div>
 
             <table class="treasure-table">
                 <tr>
                     <th>
-                        <img src="{% static "images/material.png" %}">
                         Material:
                     </th>
                     <td>{{ treasure.material }}</td>
