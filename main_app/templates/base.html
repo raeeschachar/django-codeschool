@@ -11,8 +11,19 @@
 <body>
 <nav class="navbar navbar-default navbar-static-top text-center">
     <a href="/">
-        <img src="{% static 'images/logo.png' %}" alt="TreasureGram">
+        <img src="{% static 'images/images.jpg' %}" alt="TreasureGram">
     </a>
+    {% if user.is_authenticated %}
+        <a class="navbar-text navbar-right"
+           href="{% url 'profile' user.username %}">{{ user.username }}</a>
+        <a class="navbar-text navbar-right"
+           href="{% url 'logout' %}">logout</a>
+
+    {% else %}
+        <a class="navbar-text navbar-right"
+           href="{% url 'login' %}">login</a>
+
+    {% endif %}
 </nav>
 
 <main class="container container--mw700">
@@ -20,5 +31,8 @@
     {% endblock %}
 
 </main>
+<footer>Some Footer</footer>
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

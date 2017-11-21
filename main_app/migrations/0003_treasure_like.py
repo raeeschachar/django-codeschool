@@ -7,14 +7,14 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('main_app', '0002_auto_20171107_2030'),
+        ('main_app', '0002_treasure_user'),
     ]
 
     operations = [
-        migrations.AlterField(
+        migrations.AddField(
             model_name='treasure',
-            name='id',
-            field=models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True),
+            name='like',
+            field=models.IntegerField(default=0),
             preserve_default=True,
         ),
     ]
