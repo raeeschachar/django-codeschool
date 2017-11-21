@@ -6,7 +6,7 @@ $('button').on('click', function(event){
     var element = $(this);
     $.ajax({
         url : '/like_treasure/',
-        type : 'GET',
+        type : 'POST',
         data : { treasure_id : element.attr("data-id")},
         success : function(response){
             element.html(' ' + response)
